@@ -20,4 +20,10 @@ public class UserRegistation {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+    public boolean phoneNumber(String phoneNumber) {
+        String regex = "^[0-9]{2}\\s{1}[0-9]{10}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+    }
 }
