@@ -83,4 +83,28 @@ public class MoodAnalyzer {
         }
         return value;
     }
+    public IUserRegistration checkFirstName = firstName-> {
+        boolean value = Pattern.matches("[A-Z]{1}[a-zA-Z]+",firstName);
+        return value;
+    };
+
+    public IUserRegistration checkLastName = lastName-> {
+        boolean value = Pattern.matches("[A-Z]{1}[a-zA-Z]+",lastName);
+        return value;
+    };
+
+    public IUserRegistration checkEmail = email-> {
+        boolean value = Pattern.matches("^[a-zA-Z]+[-\\+\\_\\.a-zA-Z0-9]+[@][a-zA-Z0-9]+([.]?[a-zA-Z\\,]{2,3}){2,3}", email);
+        return value;
+    };
+
+    public IUserRegistration checkPassword = password-> {
+        boolean value = Pattern.matches("(.{8,}[A-Z0-9]?[+.$#@!&%*]?)", password);
+        return value;
+    };
+
+    public IUserRegistration checkMobileNumber = mobileNumber-> {
+        boolean value = Pattern.matches("^\\+[0-9]{2}[ ][1-9][0-9]{9}$", mobileNumber);
+        return value;
+    };
 }
